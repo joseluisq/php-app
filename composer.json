@@ -1,0 +1,56 @@
+{
+    "name": "joseluisq/php-app",
+    "description": "A simple PHP App",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Quintana",
+            "homepage": "https://github.com/joseluisq"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Core\\": "src/core",
+            "App\\Controllers\\": "src/controllers",
+            "App\\Routes\\": "src/routes",
+            "App\\Database\\": "src/database",
+            "App\\Config\\": "src/config"
+        },
+        "files": [
+            "src/bootstrap.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "twig/twig": "^3.0",
+        "joseluisq/leap": "dev-master"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-parallel": "^1.0",
+        "pestphp/pest-dev-tools": "dev-master",
+        "subiabre/appgati": "^2.0"
+    },
+    "minimum-stability": "dev",
+    "scripts": {
+        "lint": "PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix -v --allow-risky=yes --dry-run",
+        "test:lint": "PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix -v --allow-risky=yes",
+        "test:types": "phpstan analyse --memory-limit=-1 --debug",
+        "test:unit": "pest --colors=always",
+        "test:parallel": "exit 1",
+        "test:integration": "exit 1",
+        "update:snapshots": "exit 1",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
