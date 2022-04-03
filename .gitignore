@@ -1,11 +1,11 @@
 node_modules
-*.cache
 dist
 *.log
 **/.DS_Store
 vendor/
 public/assets/*
-src/cache/*
+cache/*
+logs/*
 *.~
 **/*.tgz
 **/*.gz
@@ -23,4 +23,5 @@ src/cache/*
 TODO
 
 !public/assets/.gitkeep
-!src/cache/.gitkeep
+!cache/.gitkeep
+!logs/.gitkeep

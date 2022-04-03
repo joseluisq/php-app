@@ -11,15 +11,14 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "App\\Core\\": "src/core",
-            "App\\Controllers\\": "src/controllers",
-            "App\\Routes\\": "src/routes",
-            "App\\Database\\": "src/database",
-            "App\\Config\\": "src/config"
+            "App\\": "./",
+            "App\\Core\\": "core",
+            "App\\Controllers\\": "controllers",
+            "App\\Database\\": "database",
+            "App\\Config\\": "config"
         },
         "files": [
-            "src/bootstrap.php"
+            "bootstrap.php"
         ]
     },
     "config": {
