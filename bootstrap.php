@@ -9,11 +9,11 @@ use Leap\Leap;
 use Leap\Route;
 
 // Application settings
-$app = new Leap([
+(new Leap([
     'database' => [
         'driver'    => 'sqlite',
         'host'      => 'localhost',
-        'database'  => __DIR__ . '/db/todos.db',
+        'database'  => __DIR__ . '/database/todos.db',
         'charset'   => 'utf8',
         'collation' => 'utf8mb4_bin',
         'prefix'    => '',
@@ -27,11 +27,8 @@ $app = new Leap([
         'path'  => __DIR__ . '/logs/app.log',
         'level' => 'DEBUG',
     ],
-]);
-
-// Application routes
-$app->boot(function (array $config) {
-    Route::get('/',         [HomeCtrl::class, 'index'], $config);
-    Route::get('/headers',  [HomeCtrl::class, 'headers'], $config);
-    Route::get('/host',     [HomeCtrl::class, 'host'], $config);
+]))->boot(function (Route $route) {
+    $route->get('/',         [HomeCtrl::class, 'index']);
+    $route->get('/headers',  [HomeCtrl::class, 'headers']);
+    $route->get('/host',     [HomeCtrl::class, 'host']);
 });
