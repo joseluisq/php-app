@@ -28,7 +28,7 @@ final class HomeCtrl extends Controller
     /** GET /todo/{id} */
     public function todo(Response $resp, array $args)
     {
-        $id = (int) $args['args']['id'];
+        $id = (int) $args['id'];
         $todo = $this->db()->table('todo')->find($id);
         $resp->json($todo);
     }
