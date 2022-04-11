@@ -18,17 +18,18 @@ final class HomeCtrl extends Controller
         );
     }
 
-    public function headers(Request $req, Response $resp)
+    /** GET /todo */
+    public function todos(Response $resp)
     {
-        $resp->json([
-            'headers' => $req->headers()
-        ]);
+        $todos = $this->db()->table('todo')->get();
+        $resp->json($todos);
     }
 
-    public function host(Request $req, Response $resp)
+    /** GET /todo/{id} */
+    public function todo(Response $resp, array $args)
     {
-        $resp->json([
-            'host' => $req->header(Header::Host),
-        ]);
+        $id = (int) $args['args']['id'];
+        $todo = $this->db()->table('todo')->find($id);
+        $resp->json($todo);
     }
 }

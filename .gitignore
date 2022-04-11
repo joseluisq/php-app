@@ -19,9 +19,11 @@ logs/*
 /*.bin
 *.cache
 *.lock
+*.db
 *.env
 TODO
 
 !public/assets/.gitkeep
 !cache/.gitkeep
 !logs/.gitkeep
+!database/*.sql

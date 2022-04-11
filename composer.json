@@ -15,6 +15,7 @@
             "App\\Core\\": "core",
             "App\\Controllers\\": "controllers",
             "App\\Database\\": "database",
+            "App\\Routes\\": "routes",
             "App\\Config\\": "config"
         },
         "files": [

@@ -2,8 +2,37 @@
 
 > A simple PHP application example using [Leap](https://github.com/joseluisq/leap).
 
-## Usage
+## Requirements
 
+[PHP 8.1](https://www.php.net/releases/8.1/en.php) or newer.
+
+## Directory Structure
+
+```sh
+.
+├── cache/              # Optional cache folder
+├── config/             # Configuration folder
+│   └── Config.php
+├── controllers/        # Controllers folder
+│   └── HomeCtrl.php
+├── core/               # Application core utilities
+├── database/           # Database-related folder
+├── logs/               # Logging files folder
+├── public/             # Web server folder
+│   ├── assets/
+│   └── index.php
+├── routes/             # Routes folder
+│   └── Routes.php
+├── tests/              # Testing-related folder
+├── views/              # Application views/templates folder
+│   └── home.html
+├── bootstrap.php       # Application entrypoint
+├── composer.json
+├── phpstan.neon
+├── phpunit.xml
+```
+
+## Usage
 
 __Built-in server__
 
