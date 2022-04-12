@@ -17,6 +17,8 @@ services:
 
   php-fpm:
     image: joseluisq/php-fpm:8.1
+    env_file:
+      - .env
     environment:
       - "ENV_SUBSTITUTION_ENABLE=true"
       - "PHP_MEMORY_LIMIT=512M"

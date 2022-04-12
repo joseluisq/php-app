@@ -27,3 +27,4 @@ TODO
 !cache/.gitkeep
 !logs/.gitkeep
 !database/*.sql
+!environment.env

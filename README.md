@@ -28,6 +28,7 @@
 │   └── home.html
 ├── bootstrap.php       # Application entrypoint
 ├── composer.json
+├── environment.env     # Environment template file to setup an app
 ├── phpstan.neon
 ├── phpunit.xml
 ```

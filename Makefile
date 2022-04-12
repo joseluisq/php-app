@@ -1,5 +1,5 @@
 devel:
-	php -S [::]:8088 -t public/
+	enve php -S [::]:8088 -t public/
 .PHONY: devel
 
 devel-docker:

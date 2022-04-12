@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Leap\Controller;
-use Leap\Header;
-use Leap\Request;
 use Leap\Response;
 
 final class HomeCtrl extends Controller
