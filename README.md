@@ -17,7 +17,7 @@
 │   └── HomeCtrl.php
 ├── core/               # Application core utilities
 ├── database/           # Database-related folder
-├── logs/               # Logging files folder
+├── logs/               # Logging files folder (optional)
 ├── public/             # Web server folder
 │   ├── assets/
 │   └── index.php
