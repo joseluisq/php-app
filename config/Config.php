@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace App\Config;
 
+use Leap\ConfigInterface;
+
 /** Application settings class. */
-final class Config
+final class Config implements ConfigInterface
 {
     /**
      * Get all application settings loaded from the system environment variables.
      * NOTE: relative-path values are relative to the app root directory.
      */
-    public static function get()
+    public static function get(): array
     {
         return [
             'database' => [

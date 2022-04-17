@@ -3,7 +3,6 @@ version: "3.3"
 services:
   server:
     image: nginx:1.21-alpine
-    command: nginx -g "daemon off;"
     ports:
       - 8088:80
     volumes:
@@ -28,3 +27,18 @@ services:
       - "9090"
     volumes:
       - ./:/usr/share/nginx/html
+      # - ../leap:/usr/share/nginx/leap
+      # - ../ruta:/usr/share/nginx/ruta
+
+  # Composer for development
+  ##########################
+  # "repositories": [
+  #     {
+  #         "type": "path",
+  #         "url": "../leap"
+  #     },
+  #     {
+  #         "type": "path",
+  #         "url": "../ruta"
+  #     }
+  # ],
