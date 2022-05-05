@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace App\Config;
 
-use Leap\ConfigInterface;
-
 /** Application settings class. */
-final class Config implements ConfigInterface
+final class Config implements \Leap\ConfigInterface
 {
     /**
      * Get all application settings loaded from the system environment variables.

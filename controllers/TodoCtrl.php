@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Leap\Controller;
-use Leap\Response;
+use App\Core\ErrorTypes;
+use App\Core\Result;
 
-final class HomeCtrl extends Controller
+final class TodoCtrl extends \Leap\Controller
 {
-    public function index(Response $resp)
+    /** GET / */
+    public function index(\Leap\Response $resp)
     {
         $this->log()->info('this is an warning');
         $resp->html(
@@ -18,19 +19,24 @@ final class HomeCtrl extends Controller
     }
 
     /** GET /todo */
-    public function todos(Response $resp)
+    public function todos(\Leap\Response $resp)
     {
         $todos = $this->db()->table('todo')->get();
         $this->log()->info('todos selected');
-        $resp->json($todos);
+        $resp->json(Result::Ok($todos));
     }
 
     /** GET /todo/{id} */
-    public function todo(Response $resp, array $args)
+    public function todo(\Leap\Response $resp, array $args)
     {
         $id = (int) $args['id'];
         $todo = $this->db()->table('todo')->find($id);
-        $this->log()->info("todo by id '$id' is found");
-        $resp->json($todo);
+
+        $data = match ($todo) {
+            null => Result::Err(ErrorTypes::NotFound),
+            default => Result::Ok($todo),
+        };
+
+        $resp->json($data);
     }
 }

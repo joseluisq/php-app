@@ -4,18 +4,16 @@ declare(strict_types=1);
 
 namespace App\Routes;
 
-use App\Controllers\HomeCtrl;
-use Leap\Route;
-use Leap\RoutesInterface;
+use App\Controllers\TodoCtrl;
 
 /** Application routes class. */
-final class Routes implements RoutesInterface
+final class Routes implements \Leap\RoutesInterface
 {
     /** Configure all application routes. */
-    public static function setup(Route $route)
+    public static function setup(\Leap\Route $route)
     {
-        $route->get('/',            [HomeCtrl::class, 'index']);
-        $route->get('/todos',       [HomeCtrl::class, 'todos']);
-        $route->get('/todos/{id}',  [HomeCtrl::class, 'todo']);
+        $route->get('/',            [TodoCtrl::class, 'index']);
+        $route->get('/todos',       [TodoCtrl::class, 'todos']);
+        $route->get('/todos/{id}',  [TodoCtrl::class, 'todo']);
     }
 }

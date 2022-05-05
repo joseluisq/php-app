@@ -6,7 +6,6 @@ namespace App;
 
 use App\Config\Config;
 use App\Routes\Routes;
-use Leap\Leap;
 
-(new Leap(Config::get()))
+(new \Leap\Leap(Config::get()))
     ->boot(Routes::setup(...));
