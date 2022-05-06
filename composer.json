@@ -25,7 +25,10 @@
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
-        }
+        },
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "require": {
         "php": ">=8.0",
@@ -40,7 +43,7 @@
     "minimum-stability": "dev",
     "scripts": {
         "lint": "PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix -v --allow-risky=yes --dry-run",
-        "test:lint": "PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix -v --allow-risky=yes",
+        "test:lint": "PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix -v --allow-risky=yes --using-cache=no",
         "test:types": "phpstan analyse --memory-limit=-1 --debug",
         "test:unit": "pest --colors=always",
         "test:parallel": "exit 1",

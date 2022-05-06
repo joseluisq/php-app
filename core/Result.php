@@ -11,7 +11,7 @@ final class Result
     {
         return [
             'success' => true,
-            'data' => $data,
+            'data'    => $data,
         ];
     }
 
@@ -20,8 +20,8 @@ final class Result
     {
         return [
             'success' => false,
-            'type' => $type,
-            'data' => $data,
+            'type'    => $type,
+            'data'    => $data,
         ];
     }
 }

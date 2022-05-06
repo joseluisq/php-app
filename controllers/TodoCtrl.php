@@ -29,11 +29,11 @@ final class TodoCtrl extends \Leap\Controller
     /** GET /todo/{id} */
     public function todo(\Leap\Response $resp, array $args)
     {
-        $id = (int) $args['id'];
+        $id   = (int) $args['id'];
         $todo = $this->db()->table('todo')->find($id);
 
         $data = match ($todo) {
-            null => Result::Err(ErrorTypes::NotFound),
+            null    => Result::Err(ErrorTypes::NotFound),
             default => Result::Ok($todo),
         };
 

@@ -12,8 +12,8 @@ final class Routes implements \Leap\RoutesInterface
     /** Configure all application routes. */
     public static function setup(\Leap\Route $route)
     {
-        $route->get('/',            [TodoCtrl::class, 'index']);
-        $route->get('/todos',       [TodoCtrl::class, 'todos']);
-        $route->get('/todos/{id}',  [TodoCtrl::class, 'todo']);
+        $route->get('/', [TodoCtrl::class, 'index']);
+        $route->get('/todos', [TodoCtrl::class, 'todos']);
+        $route->get('/todos/{id}', [TodoCtrl::class, 'todo']);
     }
 }

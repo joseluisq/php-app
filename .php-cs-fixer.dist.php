@@ -1,9 +1,16 @@
 <?php
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__ . DIRECTORY_SEPARATOR . 'tests')
-    ->in(__DIR__ . DIRECTORY_SEPARATOR . 'src')
-    ->append(['.php-cs-fixer.dist.php']);
+    ->in([
+        __DIR__ . DIRECTORY_SEPARATOR . 'config',
+        __DIR__ . DIRECTORY_SEPARATOR . 'controllers',
+        __DIR__ . DIRECTORY_SEPARATOR . 'core',
+        __DIR__ . DIRECTORY_SEPARATOR . 'database',
+        __DIR__ . DIRECTORY_SEPARATOR . 'public',
+        __DIR__ . DIRECTORY_SEPARATOR . 'routes',
+        __DIR__ . DIRECTORY_SEPARATOR . 'tests',
+    ])
+    ->append(['boostrap.php', '.php-cs-fixer.dist.php']);
 
 $rules = [
     '@Symfony'               => true,
